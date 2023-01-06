@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Wyremontuj mieszkanie</title>
+        <link rel="stylesheet" href="remont.css">
+    </head>
+    <body>
+        <header></header>
+
+        <article>
+            <div class="element"><a href="index.html">O NAS</a></div>
+            <div class="element"><a href="kontakt.html">KONTAKT</a></div>
+            <div class="element"><a href="kalkulator.html">KALKULATOR</a></div>
+            <div class="element"><a href="http://www.jakremontowac.pl/" target="_blank">POLECANE STORNY</a></div>
+        </article>
+
+        <main>
+            <h1>Malowanie pokoju: 8 zł za m²</h1>
+            <p>
+                Wymiary pokoju w metrach:
+                <input type="number" id="x" name="x" min="0"> 
+                <input type="number" id="z" name="z" min="0"> 
+            </p>
+            <button id="calculate">OBLICZ KOSZT</button>
+            <p id="outputA"></p>
+            <p id="outputB"></p>
+        </main>
+
+        <footer>Autor strony: Tomasz Kośla</footer>
+
+        <script type="text/javascript">
+            const y = 2.7;
+            const cost = 8; //per cubic meter (PLN)
+
+            document.getElementById("calculate").onclick = function(){
+                x = document.getElementById("x").value;
+                z = document.getElementById("z").value;
+
+                area = 2*x*y + 2*z*y;
+                document.getElementById("outputA").innerHTML = "Powierzchnia całkowita ścian: " + area;
+
+                endCost = area*cost;
+                document.getElementById("outputB").innerHTML = "Koszt malowania: " + endCost + " zł";
+            }
+
+        </script>
+    </body>
+</html>
