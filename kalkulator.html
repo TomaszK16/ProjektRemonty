@@ -38,10 +38,10 @@
                 z = document.getElementById("z").value;
 
                 area = 2*x*y + 2*z*y;
-                document.getElementById("outputA").innerHTML = "Powierzchnia całkowita ścian: " + area;
+                document.getElementById("outputA").innerHTML = "Powierzchnia całkowita ścian: " + area.toFixed(5);
 
                 endCost = area*cost;
-                document.getElementById("outputB").innerHTML = "Koszt malowania: " + endCost + " zł";
+                document.getElementById("outputB").innerHTML = "Koszt malowania: " + endCost.toFixed(2) + " zł";
             }
 
         </script>
